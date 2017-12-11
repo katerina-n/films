@@ -1,0 +1,27 @@
+<h3>tests</h3>
+<table style="border: solid;">
+    <?php foreach ($tests as $key=> $value): ?>
+        <tr>
+            <form method="post" action="../webroot/index.php?controller=default&action=add">
+                <td> <input type="hidden" name="id" value="<?= $value->getId();?>"></td>
+                <td><input type="text" name="title" value="<?=$value->getTitle();?>"> </td>
+                <td><input type="text" name="release_year" value="<?=$value->getReleaseYear();?>"> </td>
+                <td><input type="text" name="format" value="<?=$value->getFormat(); ?>">
+                </td>
+                <td><input type="text" name="stars" value="<?=$value->getStars(); ?>">
+                </td>
+                <td>
+                    <button>Save</button>
+                </td>
+            </form>
+            <form method="post" action="../webroot/index.php?controller=default&action=delete">
+                <td> <input type="hidden" name="id" value="<?= $value->getId();?>"></td>
+                <td>
+                    <button>Delete</button>
+                </td>
+            </form>
+        </tr>
+
+    <?php endforeach; ?>
+
+</table>
